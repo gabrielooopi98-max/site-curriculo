@@ -26,15 +26,15 @@ function criarCardProjeto(projeto) {
     `).join('')}
 </div>
 
-    <button class="btn-expandir-card" aria-label="Ver mais">
+    <button class="btn-expandir-card" type="button" aria-label="Ver tecnologias" aria-expanded="false">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M6 9l6 6 6-6"/>
-    </button>    
     </svg>
+    </button>
 
     <div class="area-interativa-card-projeto">
-    <a href="${projeto.links.verSite}" class="btn-ver-projeto" target="_blank">Ver Site</a>
-    <a href="${projeto.links.github}" class="btn-github" target="_blank"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
+    <a href="${projeto.links.verSite}" class="btn-ver-projeto" target="_blank" rel="noopener noreferrer">Ver Site</a>
+    <a href="${projeto.links.github}" class="btn-github" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
                                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
                      0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
                      -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
@@ -51,13 +51,16 @@ function criarCardProjeto(projeto) {
 
     const btnExpandirCard = card.querySelector('.btn-expandir-card');
     btnExpandirCard.addEventListener('click', () => {
-        card.classList.toggle('expandido');
+        const expandido = card.classList.toggle('expandido');
+        btnExpandirCard.setAttribute('aria-expanded', expandido);
+        btnExpandirCard.setAttribute('aria-label', expandido ? 'Ocultar tecnologias' : 'Ver tecnologias');
         sincronizarAlturaCards();
     });
 
     return card;
 }
 
+// FUNÇÃO PARA RENDERIZAR OS CARDS
 function renderizarCards() {
     const container = document.querySelector('.cards-projetos-grid');
 
@@ -69,6 +72,7 @@ function renderizarCards() {
 
 renderizarCards();
 
+// FUNÇÃO PARA SICRONIZAR ALTURA DOS CARDS
 function sincronizarAlturaCards() {
     const todosCards = document.querySelectorAll('.card-projeto');
     const cardsExpandidos = document.querySelectorAll('.card-projeto.expandido');
