@@ -52,7 +52,7 @@ const projetos = [
             { nome: "HTML", porcentagem: 19.8, cor: "#e8491d" }
         ],
         links: {
-            github: "https://github.com/gabrielooopi98-max/site-login",
+            github: " https://gabrielooopi98-max.github.io/site-login/",
             verSite: "https://gabrielooopi98-max.github.io/site-login/"
         }
     },
