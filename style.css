@@ -1184,7 +1184,48 @@ footer {
 
 @media (max-width: 900px) {
     .cards-projetos-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        display: flex;
+        overflow-x: auto;
+        grid-template-columns: none;
+    }
+
+    .card-projeto {
+        flex: 0 0 100%;
+    }
+
+    .area-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    .dot {
+        width: 15px;
+        height: 12px;
+        padding: 4px;
+        border: none;
+        border-radius: 5px;
+        background: #9ca3af;
+        background-clip: content-box;
+        cursor: pointer;
+        transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .dot.ativo {
+        background-color: #111827;
+        box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.18);
+        transform: scale(1.15);
+    }
+
+    .dot:hover {
+        background-color: #374151;
+    }
+
+    .dot:focus-visible {
+        outline: 3px solid rgba(17, 24, 39, 0.35);
+        outline-offset: 3px;
     }
 }
 

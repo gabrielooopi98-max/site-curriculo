@@ -42,4 +42,18 @@ const projetos = [
             verSite: "https://gabrielmoreira89.github.io/Igreja-Financeiro/"
         }
     },
+    {
+        titulo: "Sistema De Login",
+        descricao: "Projeto de uma interface moderna de login e cadastro de usuários. Desenvolvido com HTML, CSS e JavaScript puro, possui alternância entre os formulários, validação de dados, criação de contas e autenticação utilizando localStorage com hash SHA-256. O projeto é compatível com hospedagem estática, como o GitHub Pages.",
+        imagem: "imagens/img-projeto-sistema-login.png",
+        linguagens: [
+            { nome: "JavaScript", porcentagem: 35.3, cor: "#f1c40f" },
+            { nome: "CSS", porcentagem: 44.9, cor: "#6c3ce9" },
+            { nome: "HTML", porcentagem: 19.8, cor: "#e8491d" }
+        ],
+        links: {
+            github: "https://github.com/gabrielooopi98-max/site-login",
+            verSite: "https://gabrielooopi98-max.github.io/site-login/"
+        }
+    },
 ]

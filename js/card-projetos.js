@@ -102,3 +102,23 @@ function sincronizarAlturaCards() {
     });
 
 }
+
+//AREA DOTS
+
+const container = document.querySelector('.cards-projetos-grid');
+const cards = document.querySelectorAll('.card-projeto');
+const dots = document.querySelectorAll('.dot');
+
+dots.forEach((dot, indice) => {
+    dot.addEventListener("click", () => {
+        const card = cards[indice];
+
+        container.scrollTo({
+            left: card.offsetLeft,
+            behavior: 'smooth'
+        });
+
+        dots.forEach(dot => dot.classList.remove('ativo'));
+        dot.classList.add('ativo');
+    })
+})
